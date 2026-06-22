@@ -1,5 +1,6 @@
 package Common;
 
+import Drivers.DriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -26,11 +27,12 @@ public class Utils {
     public static void browserLaunch(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
     public static void url(String url){
-        driver.get(url);
+        DriverManager.getDriver().get(url);
     }
+
     public static void maximize(){
         driver.manage().window().maximize();
     }

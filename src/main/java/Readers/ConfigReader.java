@@ -12,6 +12,7 @@ public class ConfigReader {
     {
         try {
             FileInputStream fis = new FileInputStream("src/test/resources/PropertyFile/env.properties");
+            prop.load(fis);
         } catch (IOException e) {
             System.out.println("File Not Found");
         }
